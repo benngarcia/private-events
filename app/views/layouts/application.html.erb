@@ -10,6 +10,12 @@
   </head>
 
   <body>
+
+  <% if session[:user_id] %>
+  <%= link_to "Profile", @user %> <br>
+  <% else %>
+  <%= link_to "Sign In", new_user_path %>
+  <% end  %>
     <%= yield %>
   </body>
 </html>
