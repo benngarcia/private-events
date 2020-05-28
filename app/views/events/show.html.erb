@@ -25,5 +25,15 @@
   <%= @event.cost_of_entry %>
 </p>
 
+<p>
+  <strong>Event Organizer:</strong>
+  <%= link_to @event.creator.name, @event.creator %>
+</p>
+
+<h3>Event Attendees</h3>
+<%= @event.attendees.each do |a| %>
+  <br> <%= link_to a.name, @a %>
+<% end %>
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
